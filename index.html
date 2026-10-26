@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Casa Intencional</title>
+<meta name="description" content="A vida que você deseja começa na casa que você já tem.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- PROVISÓRIO: as fontes originais da identidade não foram enviadas. Substituir por @font-face com os arquivos oficiais. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400&family=Jost:wght@300;400;500&display=swap">
+<style>
+/* Primeira dobra: duas áreas (texto | fotografia + ramo original). Tema único claro, igual ao fundo dos arquivos da marca. */
+:root {
+  /* Paleta extraída dos círculos de "Paleta de cores" (elementos-paleta.jpeg) */
+  --off-white: #F2EFEA;
+  --bege: #D6CEC1;
+  --taupe: #B0A69A;
+  --verde-oliva: #64664E;
+  --verde-suave: #AEB09A;
+  --cinza-quente: #898278;
+  /* Fundo dos arquivos do logotipo e dos elementos gráficos, para os JPEGs se fundirem à página */
+  --fundo: #F3F2EE;
+  /* Cinza quente escurecido apenas para o texto corrido atingir contraste AA (4.5:1) */
+  --texto: #5E5850;
+
+  /* PROVISÓRIO até recebermos os arquivos de fonte oficiais */
+  --f-titulo: "Crimson Pro", Georgia, "Times New Roman", serif;
+  --f-texto: "Crimson Pro", Georgia, "Times New Roman", serif;
+  --f-botao: "Jost", "Helvetica Neue", Arial, sans-serif;
+
+  /* Destino do botão principal: ainda não definido */
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--fundo); color: var(--texto); font-family: var(--f-texto); -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--fundo); }
+img { display: block; max-width: 100%; height: auto; }
+
+.dobra {
+  max-width: 1200px; margin: 0 auto;
+  padding-left: max(24px, env(safe-area-inset-left, 0px));
+  padding-right: max(24px, env(safe-area-inset-right, 0px));
+  padding-block: clamp(32px, 5vw, 64px) clamp(56px, 7vw, 96px);
+  display: grid; grid-template-columns: minmax(0, 11fr) minmax(0, 9fr);
+  gap: clamp(40px, 6vw, 96px); align-items: center;
+  min-height: min(100svh, 860px);
+}
+.texto { min-width: 0; display: grid; justify-items: start; }
+.logo { width: clamp(190px, 20vw, 250px); margin: 0 0 clamp(40px, 6vw, 72px) -2px; }
+h1 {
+  margin: 0; font-family: var(--f-titulo); font-weight: 400; color: var(--texto);
+  font-size: clamp(2.5rem, 5.2vw, 4.25rem); line-height: 1.06; letter-spacing: -0.01em;
+  text-wrap: balance; max-width: 13em;
+}
+.apoio { margin: clamp(22px, 2.6vw, 30px) 0 0; max-width: 31em; font-size: clamp(1.14rem, 1.6vw, 1.3rem); line-height: 1.6; font-weight: 300; color: var(--texto); }
+.traco { width: 44px; height: 1px; background: var(--taupe); margin-top: clamp(26px, 3vw, 34px); }
+.btn {
+  margin-top: clamp(26px, 3vw, 34px);
+  display: inline-flex; align-items: center; justify-content: center; text-align: center;
+  min-height: 52px; padding: 16px 30px; border-radius: 999px;
+  border: 1px solid var(--verde-oliva); background: var(--verde-oliva); color: var(--off-white);
+  font-family: var(--f-botao); font-weight: 500; font-size: 0.8rem; letter-spacing: 0.2em; text-decoration: none; cursor: pointer;
+  transition: background-color .25s ease, color .25s ease;
+}
+.btn:hover { background: var(--fundo); color: var(--verde-oliva); }
+.btn:focus-visible { outline: 2px solid var(--verde-oliva); outline-offset: 4px; }
+
+.visual { position: relative; min-width: 0; justify-self: end; width: 100%; max-width: 440px; }
+.foto { width: 100%; aspect-ratio: 438 / 470; object-fit: cover; }
+.ramo { position: absolute; width: clamp(120px, 14vw, 170px); left: clamp(-96px, -7vw, -60px); bottom: -34px; pointer-events: none; }
+
+@media (max-width: 900px) {
+  .dobra { grid-template-columns: 1fr; min-height: 0; gap: 40px; }
+  .visual { justify-self: center; max-width: 520px; }
+  .ramo { left: -18px; bottom: -28px; width: 120px; }
+  .texto { justify-items: center; text-align: center; }
+  .logo { margin-left: 0; margin-right: 0; }
+  .traco { justify-self: center; }
+}
+@media (max-width: 560px) {
+  .logo { width: 200px; margin-bottom: 36px; }
+  .btn { width: 100%; padding-inline: 20px; letter-spacing: 0.16em; }
+  .ramo { width: 96px; left: -10px; bottom: -22px; }
+}
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+/* Segunda dobra: texto editorial à esquerda; fotografia sangrando à direita com borda orgânica (máscara SVG), contorno de casa e ramo original na transição. */
+:root { --mask-d: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M46 0 C 37 13, 29 27, 27.5 40 C 26 52, 22.5 60, 21 71 C 19.5 82, 14 91, 0 100 L100 100 L100 0 Z' fill='%23000'/%3E%3C/svg%3E");
+        --mask-m: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0 H100 V84 C 82 97, 62 92, 42 94 C 26 96, 12 100, 0 100 Z' fill='%23000'/%3E%3C/svg%3E"); }
+.dobra2 { position: relative; overflow: hidden; background: var(--fundo); }
+.dobra2-inner { position: relative; max-width: 1600px; margin: 0 auto; }
+.dobra2-texto {
+  position: relative; z-index: 2; width: 56%;
+  padding-left: max(24px, 6.25vw); padding-right: 1vw;
+  padding-block: clamp(72px, 6.4vw, 104px) clamp(80px, 7vw, 112px);
+}
+.dobra2-foto { position: absolute; z-index: 1; top: 0; bottom: 0; right: 0; left: 42%;
+  -webkit-mask: var(--mask-d) 0 0 / 100% 100% no-repeat; mask: var(--mask-d) 0 0 / 100% 100% no-repeat; }
+.dobra2-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 58% 50%; }
+.dobra2-casa { position: absolute; left: 36%; top: 12%; width: 38%; height: auto; overflow: visible; pointer-events: none; }
+.dobra2-ramo { position: absolute; z-index: 3; left: 47%; top: 38%; width: clamp(120px, 11.5vw, 184px); pointer-events: none; }
+
+.olho { display: flex; align-items: center; gap: 18px; margin: 0; font-family: var(--f-texto); font-size: clamp(0.8rem, 0.9vw, 0.9rem); letter-spacing: 0.26em; text-transform: uppercase; color: var(--texto); }
+.olho::before { content: ""; width: 40px; height: 1px; background: var(--cinza-quente); flex: none; }
+.dobra2 h2 { margin: clamp(28px, 2.6vw, 40px) 0 0; font-family: var(--f-titulo); font-weight: 400; color: var(--texto);
+  font-size: clamp(2.3rem, 4.1vw, 4.1rem); line-height: 1.1; letter-spacing: -0.012em; max-width: 12em; text-wrap: balance; }
+.dobra2 em { font-style: italic; color: var(--verde-oliva); }
+.corpo { display: grid; gap: clamp(18px, 1.8vw, 26px); margin-top: clamp(26px, 2.6vw, 38px); max-width: min(39vw, 640px); }
+.corpo p { margin: 0; font-size: clamp(1.08rem, 1.4vw, 1.36rem); line-height: 1.45; font-weight: 400; color: var(--texto); }
+.destaque { margin: clamp(18px, 2vw, 30px) 0 clamp(12px, 1.6vw, 24px); padding-left: clamp(20px, 2vw, 30px); border-left: 1px solid var(--cinza-quente);
+  font-family: var(--f-titulo); font-weight: 400 !important; font-size: clamp(1.5rem, 2.1vw, 2.1rem) !important; line-height: 1.3 !important; }
+
+@media (max-width: 1000px) {
+  .dobra2-inner { display: flex; flex-direction: column; }
+  .dobra2-foto { position: relative; inset: auto; height: clamp(300px, 62vw, 560px);
+    -webkit-mask: var(--mask-m) 0 0 / 100% 100% no-repeat; mask: var(--mask-m) 0 0 / 100% 100% no-repeat; }
+  .dobra2-foto img { object-position: 50% 55%; }
+  .dobra2-casa { left: 50%; top: 10%; width: min(40%, 240px); transform: translateX(-20%); }
+  .dobra2-ramo { left: max(12px, 4vw); top: auto; bottom: auto; width: clamp(84px, 16vw, 130px); position: absolute; }
+  .dobra2-texto { width: 100%; padding-left: max(24px, 6vw, env(safe-area-inset-left, 0px)); padding-right: max(24px, 6vw, env(safe-area-inset-right, 0px)); padding-block: 40px 72px; }
+  .dobra2 h2 { font-size: clamp(2rem, 6.4vw, 2.9rem); }
+  .corpo { max-width: 620px; }
+}
+@media (max-width: 560px) {
+  .olho { font-size: 0.78rem; letter-spacing: 0.22em; gap: 14px; }
+  .olho::before { width: 28px; }
+  .corpo p { font-size: 1.1rem; line-height: 1.55; }
+  .destaque { font-size: 1.5rem !important; }
+}
+/* Terceira dobra: foto à esquerda com fusão suave para o fundo; à direita olho, título, abertura, lista em duas colunas com ícones em círculos e nota final. Onda clara na base. */
+.dobra3 { position: relative; overflow: hidden; background: var(--fundo); }
+.dobra3-foto { position: absolute; inset: 0 auto 0 0; width: 49%;
+  -webkit-mask-image: linear-gradient(to right, #000 62%, transparent 99%); mask-image: linear-gradient(to right, #000 62%, transparent 99%); }
+.dobra3-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 30% 40%; }
+.dobra3-onda { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: clamp(36px, 5vw, 72px); z-index: 2; pointer-events: none; }
+.dobra3-conteudo { position: relative; z-index: 3; margin-left: 49.5%; padding-right: max(24px, 2.6vw); padding-block: clamp(64px, 4.9vw, 80px) clamp(80px, 7vw, 120px); }
+.dobra3-intro { padding-left: 3.9vw; }
+.dobra3 .olho3 { margin: 0; font-family: var(--f-botao); font-size: clamp(0.8rem, 0.98vw, 0.95rem); letter-spacing: 0.26em; text-transform: uppercase; color: var(--texto); }
+.dobra3 h2 { margin: clamp(18px, 1.6vw, 26px) 0 0; font-family: var(--f-titulo); font-weight: 500; color: #4E4A44;
+  font-size: clamp(2.3rem, 4.35vw, 4.4rem); line-height: 1.02; letter-spacing: -0.015em; max-width: 11em; text-wrap: balance; }
+.dobra3 h2 .verde { color: var(--verde-oliva); }
+.dobra3-lead { margin: clamp(18px, 1.8vw, 28px) 0 0; max-width: 30em; font-family: var(--f-botao); font-weight: 400; font-size: clamp(1.05rem, 1.4vw, 1.35rem); line-height: 1.42; color: var(--texto); }
+.sinais { list-style: none; margin: clamp(28px, 2.6vw, 42px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(22px, 2vw, 32px) clamp(20px, 1.6vw, 28px); }
+.sinais li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(16px, 1.6vw, 26px); align-items: start; }
+.sinais .ic { width: clamp(58px, 5vw, 78px); aspect-ratio: 1; border-radius: 50%; background: #ECE6DC; display: grid; place-items: center; }
+.sinais .ic svg { width: 52%; height: 52%; }
+.sinais p { margin: 0; padding-top: clamp(2px, .5vw, 8px); font-family: var(--f-botao); font-weight: 400; font-size: clamp(0.98rem, 1.12vw, 1.1rem); line-height: 1.55; color: var(--texto); max-width: 17em; }
+.nota { margin: clamp(30px, 2.6vw, 42px) 0 0; padding: clamp(20px, 1.9vw, 30px) clamp(22px, 2.2vw, 34px); background: #EFEAE1; border-left: 2px solid var(--verde-oliva); border-radius: 4px 10px 10px 4px;
+  font-family: var(--f-titulo); font-style: italic; font-size: clamp(1.2rem, 1.7vw, 1.7rem); line-height: 1.38; color: var(--texto); }
+.nota span { display: block; }
+
+@media (max-width: 1000px) {
+  .dobra3-foto { position: relative; inset: auto; width: 100%; height: clamp(340px, 86vw, 620px);
+    -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 100%); mask-image: linear-gradient(to bottom, #000 70%, transparent 100%); }
+  .dobra3-foto img { object-position: 40% 30%; }
+  .dobra3-conteudo { margin-left: 0; margin-top: 8px; padding-left: max(24px, 6vw, env(safe-area-inset-left, 0px)); padding-right: max(24px, 6vw, env(safe-area-inset-right, 0px)); padding-block: 0 80px; }
+  .dobra3-intro { padding-left: 0; }
+  .dobra3 h2 { font-size: clamp(2.2rem, 7vw, 3.4rem); }
+  .dobra3 .qb { display: none; }
+}
+@media (max-width: 640px) {
+  .sinais { grid-template-columns: 1fr; gap: 20px; }
+  .sinais p { max-width: none; padding-top: 6px; }
+  .nota span { display: inline; }
+}
+</style>
+</head>
+<body>
+<main>
+  <section class="dobra" aria-labelledby="titulo">
+    <div class="texto">
+      <img class="logo" src="assets/logo.png" alt="Casa Intencional. Ambientes que transformam vidas" width="870" height="519" decoding="async">
+      <h1 id="titulo">A vida que você deseja começa na casa que você já tem.</h1>
+      <p class="apoio">Descubra como transformar sua casa em uma aliada para viver com mais intenção, cultivar novos hábitos e construir uma rotina mais alinhada com o que realmente importa para você.</p>
+      <span class="traco" aria-hidden="true"></span>
+      <!-- Destino a configurar: troque por <a class="btn" href="URL_OU_#secao"> quando o destino existir -->
+      <button class="btn" type="button" id="cta-principal" data-destino="">QUERO CONHECER O CASA INTENCIONAL</button>
+    </div>
+    <div class="visual">
+      <img class="foto" src="assets/mesa.jpg" alt="Mesa de madeira com vaso de ramos, caneca e livros sob luz natural" width="438" height="470" fetchpriority="high">
+      <img class="ramo" src="assets/ramo.png" alt="" width="280" height="326" aria-hidden="true">
+    </div>
+  </section>
+  <section class="dobra2" aria-labelledby="titulo-dobra2">
+    <div class="dobra2-inner">
+      <div class="dobra2-foto">
+        <img src="assets/sala.jpg" alt="Sala com sofá claro, almofada verde, manta e mesa de madeira com caneca e livro, sob luz natural" width="431" height="470" loading="lazy" decoding="async">
+        <svg class="dobra2-casa" viewBox="0 0 290 390" aria-hidden="true" focusable="false">
+          <path d="M1 389 V108 L150 1 L289 100 V250" fill="none" stroke="#F7F4EE" stroke-opacity=".9" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <img class="dobra2-ramo" src="assets/ramo.png" alt="" width="280" height="326" aria-hidden="true" loading="lazy">
+      <div class="dobra2-texto">
+        <p class="olho">A casa e a sua vida</p>
+        <h2 id="titulo-dobra2">A sua casa é <em>mais do que</em> o lugar onde você vive.</h2>
+        <div class="corpo">
+          <p>É onde seus dias acontecem, seus hábitos ganham forma, suas relações se fortalecem e sua história continua sendo construída.</p>
+          <p>Mas, em meio às tarefas, às responsabilidades e à correria da rotina, nem sempre conseguimos perceber como os ambientes em que vivemos podem contribuir para a vida que desejamos ter.</p>
+          <p class="destaque">E se, em vez de apenas cuidar da casa, você começasse a transformá-la em uma <em>aliada da sua vida</em>?</p>
+          <p>Uma casa que favorece seus hábitos, acolhe suas necessidades e ajuda você a viver com mais intenção, presença e conexão com aquilo que realmente importa.</p>
+          <p>Essa transformação não exige uma casa perfeita. Ela começa com um novo olhar para a casa que você já tem.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="dobra3" aria-labelledby="titulo-dobra3">
+    <div class="dobra3-foto">
+      <img src="assets/mulher.jpg" alt="Mulher sentada à mesa de madeira, com uma caneca e um caderno, olhando pensativa pela janela" width="752" height="962" loading="lazy" decoding="async">
+    </div>
+    <div class="dobra3-conteudo">
+      <div class="dobra3-intro">
+        <p class="olho3">Talvez você se reconheça nisso</p>
+        <h2 id="titulo-dobra3">Os dias passam,<br class="qb"> mas você sente que<br class="qb"> sua vida está <span class="verde">no<br class="qb"> piloto automático.</span></h2>
+        <p class="dobra3-lead">Você cuida de muitas coisas e pessoas, cumpre suas tarefas, mas ainda assim sente que falta tempo para o que realmente importa para você.</p>
+      </div>
+      <ul class="sinais">
+          <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="#5E5850" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15 L16 5 L27 15"/><path d="M8 13 V27 H24 V13"/><path d="M13 27 V20 H19 V27"/></svg></span><p>A casa parece sempre demandar mais do que você consegue dar.</p></li>
+          <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="#5E5850" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M16 26 C 9 21, 4 17, 4 11.5 C 4 8, 6.8 5.5, 10 5.5 C 12.6 5.5, 14.6 7, 16 9.2 C 17.4 7, 19.4 5.5, 22 5.5 C 25.2 5.5, 28 8, 28 11.5 C 28 17, 23 21, 16 26 Z"/></svg></span><p>Você deseja viver com mais presença e intenção, mas não sabe por onde começar.</p></li>
+          <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="#5E5850" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="11"/><path d="M16 9 V16 L21 19"/></svg></span><p>Você espera ter mais tempo, mais disposição ou uma casa melhor para começar a mudar.</p></li>
+          <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="#5E5850" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="4" width="18" height="24" rx="1.5"/><path d="M10.5 10 l1.5 1.5 l2.5 -3 M17 10.5 H22 M10.5 16 l1.5 1.5 l2.5 -3 M17 16.5 H22 M10.5 22 l1.5 1.5 l2.5 -3 M17 22.5 H22"/></svg></span><p>Mesmo fazendo o seu melhor, às vezes sente que está apenas cumprindo tarefas.</p></li>
+          <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="#5E5850" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M16 6 C 22 5, 27 10, 26 16 C 25 23, 17 27, 11 24 C 6 21, 5 13, 10 9 C 15 5, 23 9, 22 15 C 21 21, 14 22, 11 18 C 8 14, 12 9, 17 11 C 21 13, 19 19, 15 18 C 12 17, 13 13, 16 14"/><path d="M8 12 C 12 8, 20 7, 24 12 M7 18 C 10 24, 20 26, 25 19"/></svg></span><p>A rotina é intensa e, muitas vezes, você se sente cansada e sem espaço para o que te faz bem.</p></li>
+          <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="#5E5850" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 27 C 12 22, 14 17, 16 12 C 17 9, 19 6, 22 4"/><path d="M14 18 C 10 18, 7 15, 6 11 C 10 11, 13 14, 14 18 Z"/><path d="M15.5 13.5 C 19 13, 22 10, 23 6.5 C 19.5 7, 16.5 10, 15.5 13.5 Z"/><path d="M12.5 22.5 C 16 22.5, 19 20.5, 20.5 17 C 17 17, 14 19, 12.5 22.5 Z"/></svg></span><p>Você sabe que algo precisa mudar, mas a mudança parece distante da sua realidade.</p></li>
+      </ul>
+      <p class="nota"><span>Você não está sozinha. Muitas mulheres sentem o mesmo.</span> <span>E é justamente por isso que o Casa Intencional existe.</span></p>
+    </div>
+    <svg class="dobra3-onda" viewBox="0 0 1440 72" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 40 C 240 8, 520 4, 760 30 C 1000 56, 1240 60, 1440 34 V72 H0 Z" fill="#F8F6F1"/></svg>
+  </section>
+</main>
+
+</body>
+</html>
