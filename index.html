@@ -41,7 +41,7 @@ img { display: block; max-width: 100%; height: auto; }
   max-width: 1200px; margin: 0 auto;
   padding-left: max(24px, env(safe-area-inset-left, 0px));
   padding-right: max(24px, env(safe-area-inset-right, 0px));
-  padding-block: clamp(32px, 5vw, 64px) clamp(56px, 7vw, 96px);
+  padding-block: clamp(32px, 5vw, 64px) clamp(40px, 4vw, 64px);
   display: grid; grid-template-columns: minmax(0, 11fr) minmax(0, 9fr);
   gap: clamp(40px, 6vw, 96px); align-items: center;
   min-height: min(calc(100svh - 120px), 760px);
@@ -94,12 +94,16 @@ h1 {
 :root { --mask-blob: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M53 1 C 76 0, 96 13, 99 37 C 100 61, 94 84, 73 95 C 54 100, 28 99, 12 86 C 1 72, 0 47, 6 29 C 13 11, 31 2, 53 1 Z' fill='%23000'/%3E%3C/svg%3E"); }
 :root { --mask-d: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M46 0 C 37 13, 29 27, 27.5 40 C 26 52, 22.5 60, 21 71 C 19.5 82, 14 91, 0 100 L100 100 L100 0 Z' fill='%23000'/%3E%3C/svg%3E");
         --mask-m: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0 H100 V84 C 82 97, 62 92, 42 94 C 26 96, 12 100, 0 100 Z' fill='%23000'/%3E%3C/svg%3E"); }
-.dobra2 { position: relative; overflow: hidden; background: var(--fundo); }
+.dobra2 { position: relative; overflow: hidden; background: #ECE6DC; }
+/* Transições em onda: o fundo claro da primeira dobra desce em curva sobre o bege, com um fio taupe acompanhando a curva */
+.onda { position: absolute; left: 0; right: 0; width: 100%; height: clamp(56px, 7vw, 110px); z-index: 4; pointer-events: none; display: block; }
+.onda-topo { top: -1px; }
+.onda-base { bottom: -1px; }
 .dobra2-inner { position: relative; max-width: 1600px; margin: 0 auto; }
 .dobra2-texto {
   position: relative; z-index: 2; width: 56%;
   padding-left: max(24px, 6.25vw); padding-right: 1vw;
-  padding-block: clamp(72px, 6.4vw, 104px) clamp(80px, 7vw, 112px);
+  padding-block: clamp(120px, 11vw, 176px) clamp(120px, 11vw, 170px);
 }
 .dobra2-foto { position: absolute; z-index: 1; top: 0; bottom: 0; right: 0; left: 42%;
   -webkit-mask: var(--mask-d) 0 0 / 100% 100% no-repeat; mask: var(--mask-d) 0 0 / 100% 100% no-repeat; }
@@ -123,8 +127,8 @@ h1 {
     -webkit-mask: var(--mask-m) 0 0 / 100% 100% no-repeat; mask: var(--mask-m) 0 0 / 100% 100% no-repeat; }
   .dobra2-foto img { object-position: 50% 55%; }
   .dobra2-casa { left: 50%; top: 10%; width: min(40%, 240px); transform: translateX(-20%); }
-  .dobra2-ramo { left: max(12px, 4vw); top: auto; bottom: auto; width: clamp(84px, 16vw, 130px); position: absolute; }
-  .dobra2-texto { width: 100%; padding-left: max(24px, 6vw, env(safe-area-inset-left, 0px)); padding-right: max(24px, 6vw, env(safe-area-inset-right, 0px)); padding-block: 40px 72px; }
+  .dobra2-ramo { left: max(12px, 4vw); top: calc(clamp(300px, 62vw, 560px) - clamp(90px, 18vw, 150px)); bottom: auto; width: clamp(84px, 16vw, 130px); position: absolute; z-index: 5; }
+  .dobra2-texto { width: 100%; padding-left: max(24px, 6vw, env(safe-area-inset-left, 0px)); padding-right: max(24px, 6vw, env(safe-area-inset-right, 0px)); padding-block: 40px 96px; }
   .dobra2 h2 { font-size: clamp(2rem, 6.4vw, 2.9rem); }
   .corpo { max-width: 620px; }
 }
@@ -193,6 +197,10 @@ h1 {
     </div>
   </section>
   <section class="dobra2" aria-labelledby="titulo-dobra2">
+    <svg class="onda onda-topo" viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path d="M0 0 H1440 V46 C 1210 96, 980 104, 720 70 C 470 38, 230 34, 0 78 Z" fill="#F3F2EE"/>
+      <path d="M0 92 C 230 48, 470 52, 720 84 C 980 118, 1210 110, 1440 60" fill="none" stroke="#B0A69A" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </svg>
     <div class="dobra2-inner">
       <div class="dobra2-foto">
         <img src="assets/sala.jpg" alt="Sala com sofá claro, almofada verde, manta e mesa de madeira com caneca e livro, sob luz natural" width="431" height="470" loading="lazy" decoding="async">
@@ -213,7 +221,11 @@ h1 {
         </div>
       </div>
     </div>
+    <svg class="onda onda-base" viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path d="M0 110 H1440 V40 C 1190 86, 950 92, 700 58 C 450 26, 220 36, 0 72 Z" fill="#F3F2EE"/>
+    </svg>
   </section>
+
   <section class="dobra3" aria-labelledby="titulo-dobra3">
     <div class="dobra3-foto">
       <img src="assets/mulher.jpg" alt="Mulher sentada à mesa de madeira, com uma caneca e um caderno, olhando pensativa pela janela" width="752" height="962" loading="lazy" decoding="async">
