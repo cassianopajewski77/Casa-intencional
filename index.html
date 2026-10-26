@@ -157,6 +157,7 @@ h1 {
 .nota { margin: clamp(30px, 2.6vw, 42px) 0 0; padding: clamp(20px, 1.9vw, 30px) clamp(22px, 2.2vw, 34px); background: #EFEAE1; border-left: 2px solid var(--verde-oliva); border-radius: 4px 10px 10px 4px;
   font-family: var(--f-titulo); font-style: italic; font-size: clamp(1.2rem, 1.7vw, 1.7rem); line-height: 1.38; color: var(--texto); }
 .nota span { display: block; }
+.btn-dobra3 { margin-top: clamp(26px, 2.4vw, 38px); }
 
 @media (max-width: 1000px) {
   .dobra3-foto { position: relative; inset: auto; width: 100%; height: clamp(340px, 86vw, 620px);
@@ -171,6 +172,7 @@ h1 {
   .sinais { grid-template-columns: 1fr; gap: 20px; }
   .sinais p { max-width: none; padding-top: 6px; }
   .nota span { display: inline; }
+  .btn-dobra3 { width: 100%; padding-inline: 20px; letter-spacing: 0.16em; }
 }
 /* Quarta dobra: texto à esquerda e foto da mulher à direita com borda orgânica; abaixo, três caminhos com fotos em recorte orgânico, ícone em círculo, número e texto. */
 :root { --mask-d4: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M18 0 C 22 12, 24 30, 23 45 C 22 60, 21 72, 15 82 C 10 90, 5 96, 0 100 L100 100 L100 0 Z' fill='%23000'/%3E%3C/svg%3E");
@@ -291,6 +293,8 @@ h1 {
           <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="#5E5850" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 27 C 12 22, 14 17, 16 12 C 17 9, 19 6, 22 4"/><path d="M14 18 C 10 18, 7 15, 6 11 C 10 11, 13 14, 14 18 Z"/><path d="M15.5 13.5 C 19 13, 22 10, 23 6.5 C 19.5 7, 16.5 10, 15.5 13.5 Z"/><path d="M12.5 22.5 C 16 22.5, 19 20.5, 20.5 17 C 17 17, 14 19, 12.5 22.5 Z"/></svg></span><p>Você sabe que algo precisa mudar, mas a mudança parece distante da sua realidade.</p></li>
       </ul>
       <p class="nota"><span>Você não está sozinha. Muitas mulheres sentem o mesmo.</span> <span>E é justamente por isso que o Casa Intencional existe.</span></p>
+      <!-- Destino a configurar, igual ao botão da primeira dobra -->
+      <button class="btn btn-dobra3" type="button" data-destino="">QUERO CONHECER O CASA INTENCIONAL</button>
     </div>
     <svg class="dobra3-onda" viewBox="0 0 1440 72" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 40 C 240 8, 520 4, 760 30 C 1000 56, 1240 60, 1440 34 V72 H0 Z" fill="#ECE6DC"/><path d="M0 40 C 240 8, 520 4, 760 30 C 1000 56, 1240 60, 1440 34" fill="none" stroke="#B0A69A" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>
   </section>
