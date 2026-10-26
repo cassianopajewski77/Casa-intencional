@@ -34,7 +34,7 @@
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--fundo); color: var(--texto); font-family: var(--f-texto); -webkit-font-smoothing: antialiased; }
-body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--fundo); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--verde-oliva); }
 img { display: block; max-width: 100%; height: auto; }
 
 .dobra {
@@ -44,7 +44,7 @@ img { display: block; max-width: 100%; height: auto; }
   padding-block: clamp(32px, 5vw, 64px) clamp(56px, 7vw, 96px);
   display: grid; grid-template-columns: minmax(0, 11fr) minmax(0, 9fr);
   gap: clamp(40px, 6vw, 96px); align-items: center;
-  min-height: min(100svh, 860px);
+  min-height: min(calc(100svh - 120px), 760px);
 }
 .texto { min-width: 0; display: grid; justify-items: start; }
 .logo { width: clamp(190px, 20vw, 250px); margin: 0 0 clamp(40px, 6vw, 72px) -2px; }
@@ -67,7 +67,13 @@ h1 {
 .btn:focus-visible { outline: 2px solid var(--verde-oliva); outline-offset: 4px; }
 
 .visual { position: relative; min-width: 0; justify-self: end; width: 100%; max-width: 440px; }
-.foto { width: 100%; aspect-ratio: 438 / 470; object-fit: cover; }
+.foto { width: 100%; aspect-ratio: 438 / 470; object-fit: cover;
+  -webkit-mask: var(--mask-blob) 0 0 / 100% 100% no-repeat; mask: var(--mask-blob) 0 0 / 100% 100% no-repeat; }
+/* Faixa do cabeçalho em verde-oliva com a logo em versão clara */
+.topo { background: var(--verde-oliva); }
+.topo-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: center;
+  padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); padding-block: clamp(16px, 1.8vw, 24px); }
+.logo-topo { width: clamp(160px, 14vw, 210px); height: auto; }
 .ramo { position: absolute; width: clamp(120px, 14vw, 170px); left: clamp(-96px, -7vw, -60px); bottom: -34px; pointer-events: none; }
 
 @media (max-width: 900px) {
@@ -85,6 +91,7 @@ h1 {
 }
 @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
 /* Segunda dobra: texto editorial à esquerda; fotografia sangrando à direita com borda orgânica (máscara SVG), contorno de casa e ramo original na transição. */
+:root { --mask-blob: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M53 1 C 76 0, 96 13, 99 37 C 100 61, 94 84, 73 95 C 54 100, 28 99, 12 86 C 1 72, 0 47, 6 29 C 13 11, 31 2, 53 1 Z' fill='%23000'/%3E%3C/svg%3E"); }
 :root { --mask-d: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M46 0 C 37 13, 29 27, 27.5 40 C 26 52, 22.5 60, 21 71 C 19.5 82, 14 91, 0 100 L100 100 L100 0 Z' fill='%23000'/%3E%3C/svg%3E");
         --mask-m: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 0 H100 V84 C 82 97, 62 92, 42 94 C 26 96, 12 100, 0 100 Z' fill='%23000'/%3E%3C/svg%3E"); }
 .dobra2 { position: relative; overflow: hidden; background: var(--fundo); }
@@ -166,10 +173,14 @@ h1 {
 </style>
 </head>
 <body>
+<header class="topo">
+  <div class="topo-inner">
+    <img class="logo-topo" src="assets/logoclara.png" alt="Casa Intencional. Ambientes que transformam vidas" width="870" height="519" decoding="async">
+  </div>
+</header>
 <main>
   <section class="dobra" aria-labelledby="titulo">
     <div class="texto">
-      <img class="logo" src="assets/logo.png" alt="Casa Intencional. Ambientes que transformam vidas" width="870" height="519" decoding="async">
       <h1 id="titulo">A vida que você deseja começa na casa que você já tem.</h1>
       <p class="apoio">Descubra como transformar sua casa em uma aliada para viver com mais intenção, cultivar novos hábitos e construir uma rotina mais alinhada com o que realmente importa para você.</p>
       <span class="traco" aria-hidden="true"></span>
