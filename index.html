@@ -41,9 +41,9 @@ img { display: block; max-width: 100%; height: auto; }
   max-width: 1360px; margin: 0 auto;
   padding-left: max(24px, 5vw, env(safe-area-inset-left, 0px));
   padding-right: max(24px, 5vw, env(safe-area-inset-right, 0px));
-  padding-block: clamp(32px, 4vw, 56px) clamp(8px, 1vw, 16px);
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(32px, 4vw, 64px); align-items: center;
+  padding-block: clamp(32px, 4vw, 56px) clamp(40px, 4vw, 56px);
+  display: grid; grid-template-columns: minmax(0, 11fr) minmax(0, 9fr);
+  gap: clamp(40px, 6vw, 96px); align-items: center;
 }
 .texto { min-width: 0; display: grid; justify-items: start; }
 .logo { width: clamp(190px, 20vw, 250px); margin: 0 0 clamp(40px, 6vw, 72px) -2px; }
@@ -65,9 +65,8 @@ h1 {
 .btn:hover { background: var(--fundo); color: var(--verde-oliva); }
 .btn:focus-visible { outline: 2px solid var(--verde-oliva); outline-offset: 4px; }
 
-.visual { position: relative; min-width: 0; justify-self: end; width: 100%; max-width: 600px; }
-.foto { width: 100%; aspect-ratio: 438 / 470; object-fit: cover;
-  -webkit-mask: var(--mask-blob) 0 0 / 100% 100% no-repeat; mask: var(--mask-blob) 0 0 / 100% 100% no-repeat; }
+.visual { position: relative; min-width: 0; justify-self: end; width: 100%; max-width: 440px; }
+.foto { width: 100%; aspect-ratio: 438 / 470; object-fit: cover; }
 /* Faixa do cabeçalho em verde-oliva com a logo em versão clara */
 .topo { background: var(--verde-oliva); }
 .topo-inner { max-width: 1360px; margin: 0 auto; display: flex; justify-content: flex-start;
