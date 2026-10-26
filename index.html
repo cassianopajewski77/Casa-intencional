@@ -41,10 +41,9 @@ img { display: block; max-width: 100%; height: auto; }
   max-width: 1360px; margin: 0 auto;
   padding-left: max(24px, 5vw, env(safe-area-inset-left, 0px));
   padding-right: max(24px, 5vw, env(safe-area-inset-right, 0px));
-  padding-block: clamp(32px, 5vw, 64px) clamp(40px, 4vw, 64px);
+  padding-block: clamp(32px, 4vw, 56px) clamp(8px, 1vw, 16px);
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(32px, 4vw, 64px); align-items: center;
-  min-height: min(calc(100svh - 120px), 760px);
 }
 .texto { min-width: 0; display: grid; justify-items: start; }
 .logo { width: clamp(190px, 20vw, 250px); margin: 0 0 clamp(40px, 6vw, 72px) -2px; }
@@ -103,7 +102,7 @@ h1 {
 .dobra2-texto {
   position: relative; z-index: 2; width: 56%;
   padding-left: max(24px, 6.25vw); padding-right: 1vw;
-  padding-block: clamp(120px, 11vw, 176px) clamp(120px, 11vw, 170px);
+  padding-block: clamp(84px, 7.5vw, 120px) clamp(120px, 11vw, 170px);
 }
 .dobra2-foto { position: absolute; z-index: 1; top: 0; bottom: 0; right: 0; left: 42%;
   -webkit-mask: var(--mask-d) 0 0 / 100% 100% no-repeat; mask: var(--mask-d) 0 0 / 100% 100% no-repeat; }
