@@ -174,8 +174,8 @@ h1 {
 }
 /* Quarta dobra: texto à esquerda e foto da mulher à direita com borda orgânica; abaixo, três caminhos com fotos em recorte orgânico, ícone em círculo, número e texto. */
 :root { --mask-d4: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M18 0 C 22 12, 24 30, 23 45 C 22 60, 21 72, 15 82 C 10 90, 5 96, 0 100 L100 100 L100 0 Z' fill='%23000'/%3E%3C/svg%3E");
-        --mask-card: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M8 6 C 25 0, 45 8, 62 4 C 78 0, 92 2, 97 12 C 100 30, 99 70, 96 86 C 92 98, 76 96, 60 94 C 42 92, 26 100, 10 96 C 2 92, 0 70, 1 40 C 1 20, 2 9, 8 6 Z' fill='%23000'/%3E%3C/svg%3E"); }
-.dobra4 { position: relative; background: #F8F6F1; overflow: hidden; }
+        --mask-card: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M11 10 C 27 5, 46 12, 62 8 C 77 5, 89 7, 94 15 C 97 31, 96 68, 93 82 C 89 93, 76 91, 60 89 C 43 87, 27 94, 12 91 C 5 87, 3 68, 4 41 C 4 23, 5 13, 11 10 Z' fill='%23000'/%3E%3C/svg%3E"); }
+.dobra4 { position: relative; background: #ECE6DC; overflow: hidden; }
 .dobra4-topo { position: relative; min-height: 41vw; }
 .dobra4-foto { position: absolute; top: 0; right: 0; bottom: 0; width: 50.5%;
   -webkit-mask: var(--mask-d4) 0 0 / 100% 100% no-repeat; mask: var(--mask-d4) 0 0 / 100% 100% no-repeat; }
@@ -191,17 +191,17 @@ h1 {
   font-family: var(--f-titulo); font-size: clamp(1.4rem, 1.95vw, 1.95rem); line-height: 1.28; color: var(--texto); }
 .destaque4 em { display: block; font-style: italic; color: var(--verde-oliva); }
 
-.caminhos { position: relative; background: #FBF9F5; padding: clamp(20px, 1.4vw, 24px) max(24px, 4vw) clamp(48px, 4vw, 64px); }
+.caminhos { position: relative; background: #ECE6DC; padding: clamp(20px, 1.4vw, 24px) max(24px, 4vw) clamp(48px, 4vw, 64px); }
 .caminhos-linha { position: absolute; left: 0; right: 0; top: clamp(88px, 7.4vw, 124px); width: 100%; height: 40px; pointer-events: none; }
 .caminhos ol { position: relative; list-style: none; margin: 0 auto; padding: 0; max-width: 1440px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
 .caminho { position: relative; padding-inline: clamp(12px, 1.6vw, 30px); min-width: 0; }
-.caminho + .caminho::before { content: ""; position: absolute; left: 0; bottom: 0; height: clamp(110px, 9.5vw, 150px); width: 1px; background: #DCD3C6; }
+.caminho + .caminho::before { content: ""; position: absolute; left: 0; bottom: 0; height: clamp(110px, 9.5vw, 150px); width: 1px; background: #CFC5B7; }
 .caminho-foto { position: relative; width: 100%; aspect-ratio: 402 / 202; }
 .caminho-foto img { width: 100%; height: 100%; object-fit: cover; -webkit-mask: var(--mask-card) 0 0 / 100% 100% no-repeat; mask: var(--mask-card) 0 0 / 100% 100% no-repeat; }
-.caminho-ic { position: absolute; left: -5.5%; top: 53%; width: 25%; aspect-ratio: 1; border-radius: 50%; background: #EFE8DE; display: grid; place-items: center; }
+.caminho-ic { position: absolute; left: -5.5%; top: 53%; width: 25%; aspect-ratio: 1; border-radius: 50%; background: #F6F2EC; display: grid; place-items: center; }
 .caminho-ic svg { width: 50%; height: 50%; }
 .caminho-texto { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: clamp(14px, 1.4vw, 22px); margin-top: clamp(14px, 1.4vw, 22px); }
-.caminho-num { font-family: var(--f-botao); font-size: clamp(0.95rem, 1.15vw, 1.15rem); letter-spacing: 0.12em; color: var(--texto); padding-top: .35em; padding-right: clamp(14px, 1.4vw, 22px); border-right: 1px solid #D6CEC1; height: 100%; }
+.caminho-num { font-family: var(--f-botao); font-size: clamp(0.95rem, 1.15vw, 1.15rem); letter-spacing: 0.12em; color: var(--texto); padding-top: .35em; padding-right: clamp(14px, 1.4vw, 22px); border-right: 1px solid #C9BFB1; height: 100%; }
 .caminho h3 { margin: 0; font-family: var(--f-titulo); font-weight: 400; font-size: clamp(1.35rem, 1.7vw, 1.7rem); line-height: 1.2; color: #4E4A44; }
 .caminho p { margin: 8px 0 0; font-family: var(--f-botao); font-weight: 400; font-size: clamp(0.95rem, 1.07vw, 1.05rem); line-height: 1.55; color: var(--texto); max-width: 24em; }
 
@@ -292,7 +292,7 @@ h1 {
       </ul>
       <p class="nota"><span>Você não está sozinha. Muitas mulheres sentem o mesmo.</span> <span>E é justamente por isso que o Casa Intencional existe.</span></p>
     </div>
-    <svg class="dobra3-onda" viewBox="0 0 1440 72" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 40 C 240 8, 520 4, 760 30 C 1000 56, 1240 60, 1440 34 V72 H0 Z" fill="#F8F6F1"/></svg>
+    <svg class="dobra3-onda" viewBox="0 0 1440 72" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 40 C 240 8, 520 4, 760 30 C 1000 56, 1240 60, 1440 34 V72 H0 Z" fill="#ECE6DC"/><path d="M0 40 C 240 8, 520 4, 760 30 C 1000 56, 1240 60, 1440 34" fill="none" stroke="#B0A69A" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>
   </section>
   <section class="dobra4" aria-labelledby="titulo-dobra4">
     <div class="dobra4-topo">
@@ -311,7 +311,7 @@ h1 {
       </div>
     </div>
     <div class="caminhos">
-      <svg class="caminhos-linha" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 22 C 120 6, 240 30, 360 20 C 480 10, 600 34, 720 22 C 840 10, 960 32, 1080 20 C 1200 8, 1320 30, 1440 18" fill="none" stroke="#D6CEC1" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>
+      <svg class="caminhos-linha" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 22 C 120 6, 240 30, 360 20 C 480 10, 600 34, 720 22 C 840 10, 960 32, 1080 20 C 1200 8, 1320 30, 1440 18" fill="none" stroke="#C9BFB1" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>
       <ol>
         <li class="caminho">
           <div class="caminho-foto">
