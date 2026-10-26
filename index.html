@@ -172,6 +172,54 @@ h1 {
   .sinais p { max-width: none; padding-top: 6px; }
   .nota span { display: inline; }
 }
+/* Quarta dobra: texto à esquerda e foto da mulher à direita com borda orgânica; abaixo, três caminhos com fotos em recorte orgânico, ícone em círculo, número e texto. */
+:root { --mask-d4: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M18 0 C 22 12, 24 30, 23 45 C 22 60, 21 72, 15 82 C 10 90, 5 96, 0 100 L100 100 L100 0 Z' fill='%23000'/%3E%3C/svg%3E");
+        --mask-card: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M8 6 C 25 0, 45 8, 62 4 C 78 0, 92 2, 97 12 C 100 30, 99 70, 96 86 C 92 98, 76 96, 60 94 C 42 92, 26 100, 10 96 C 2 92, 0 70, 1 40 C 1 20, 2 9, 8 6 Z' fill='%23000'/%3E%3C/svg%3E"); }
+.dobra4 { position: relative; background: #F8F6F1; overflow: hidden; }
+.dobra4-topo { position: relative; min-height: 41vw; }
+.dobra4-foto { position: absolute; top: 0; right: 0; bottom: 0; width: 50.5%;
+  -webkit-mask: var(--mask-d4) 0 0 / 100% 100% no-repeat; mask: var(--mask-d4) 0 0 / 100% 100% no-repeat; }
+.dobra4-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 40%; }
+.dobra4-ramo { position: absolute; z-index: 3; left: 52.5%; top: 20%; width: clamp(120px, 11vw, 180px); transform: rotate(-18deg); pointer-events: none; }
+.dobra4-texto { position: relative; z-index: 2; width: 54%; padding-left: max(24px, 7vw); padding-right: 2vw; padding-block: clamp(48px, 4vw, 66px) clamp(36px, 2.6vw, 44px); }
+.dobra4 .olho { color: var(--texto); font-family: var(--f-botao); letter-spacing: 0.24em; }
+.dobra4 h2 { margin: clamp(22px, 2.2vw, 34px) 0 0; font-family: var(--f-titulo); font-weight: 400; color: #4E4A44; font-size: clamp(2.1rem, 3.5vw, 3.5rem); line-height: 1.1; letter-spacing: -0.012em; }
+.dobra4 h2 em { display: block; font-style: italic; color: var(--verde-oliva); }
+.dobra4-corpo { display: grid; gap: clamp(14px, 1.4vw, 22px); margin-top: clamp(18px, 1.8vw, 28px); max-width: 39em; }
+.dobra4-corpo p { margin: 0; font-family: var(--f-botao); font-weight: 400; font-size: clamp(1rem, 1.17vw, 1.15rem); line-height: 1.5; color: var(--texto); }
+.dobra4 .destaque4 { margin: clamp(12px, 1.2vw, 20px) 0 0; padding-left: clamp(18px, 1.8vw, 28px); border-left: 2px solid var(--verde-oliva);
+  font-family: var(--f-titulo); font-size: clamp(1.4rem, 1.95vw, 1.95rem); line-height: 1.28; color: var(--texto); }
+.destaque4 em { display: block; font-style: italic; color: var(--verde-oliva); }
+
+.caminhos { position: relative; background: #FBF9F5; padding: clamp(20px, 1.4vw, 24px) max(24px, 4vw) clamp(48px, 4vw, 64px); }
+.caminhos-linha { position: absolute; left: 0; right: 0; top: clamp(88px, 7.4vw, 124px); width: 100%; height: 40px; pointer-events: none; }
+.caminhos ol { position: relative; list-style: none; margin: 0 auto; padding: 0; max-width: 1440px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
+.caminho { position: relative; padding-inline: clamp(12px, 1.6vw, 30px); min-width: 0; }
+.caminho + .caminho::before { content: ""; position: absolute; left: 0; bottom: 0; height: clamp(110px, 9.5vw, 150px); width: 1px; background: #DCD3C6; }
+.caminho-foto { position: relative; width: 100%; aspect-ratio: 402 / 202; }
+.caminho-foto img { width: 100%; height: 100%; object-fit: cover; -webkit-mask: var(--mask-card) 0 0 / 100% 100% no-repeat; mask: var(--mask-card) 0 0 / 100% 100% no-repeat; }
+.caminho-ic { position: absolute; left: -5.5%; top: 53%; width: 25%; aspect-ratio: 1; border-radius: 50%; background: #EFE8DE; display: grid; place-items: center; }
+.caminho-ic svg { width: 50%; height: 50%; }
+.caminho-texto { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: clamp(14px, 1.4vw, 22px); margin-top: clamp(14px, 1.4vw, 22px); }
+.caminho-num { font-family: var(--f-botao); font-size: clamp(0.95rem, 1.15vw, 1.15rem); letter-spacing: 0.12em; color: var(--texto); padding-top: .35em; padding-right: clamp(14px, 1.4vw, 22px); border-right: 1px solid #D6CEC1; height: 100%; }
+.caminho h3 { margin: 0; font-family: var(--f-titulo); font-weight: 400; font-size: clamp(1.35rem, 1.7vw, 1.7rem); line-height: 1.2; color: #4E4A44; }
+.caminho p { margin: 8px 0 0; font-family: var(--f-botao); font-weight: 400; font-size: clamp(0.95rem, 1.07vw, 1.05rem); line-height: 1.55; color: var(--texto); max-width: 24em; }
+
+@media (max-width: 1000px) {
+  .dobra4-topo { min-height: 0; display: flex; flex-direction: column; }
+  .dobra4-foto { position: relative; width: 100%; height: clamp(300px, 70vw, 560px); order: -1;
+    -webkit-mask: var(--mask-m) 0 0 / 100% 100% no-repeat; mask: var(--mask-m) 0 0 / 100% 100% no-repeat; }
+  .dobra4-foto img { width: 132%; max-width: none; margin-left: -32%; object-position: 50% 35%; }
+  .dobra4-ramo { left: auto; right: max(12px, 4vw); top: calc(clamp(300px, 70vw, 560px) - clamp(110px, 22vw, 170px)); width: clamp(80px, 15vw, 120px); }
+  .dobra4-texto { width: 100%; padding-left: max(24px, 6vw); padding-right: max(24px, 6vw); padding-block: 32px 40px; }
+  .dobra4 h2 { font-size: clamp(2rem, 6.4vw, 3rem); }
+  .dobra4 .qb { display: none; }
+  .dobra4-ramo { display: none; }
+  .caminhos-linha { display: none; }
+  .caminhos ol { grid-template-columns: 1fr; gap: 44px; max-width: 560px; }
+  .caminho { padding-inline: 0 0; padding-left: 4%; }
+  .caminho + .caminho::before { display: none; }
+}
 </style>
 </head>
 <body>
@@ -245,6 +293,67 @@ h1 {
       <p class="nota"><span>Você não está sozinha. Muitas mulheres sentem o mesmo.</span> <span>E é justamente por isso que o Casa Intencional existe.</span></p>
     </div>
     <svg class="dobra3-onda" viewBox="0 0 1440 72" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 40 C 240 8, 520 4, 760 30 C 1000 56, 1240 60, 1440 34 V72 H0 Z" fill="#F8F6F1"/></svg>
+  </section>
+  <section class="dobra4" aria-labelledby="titulo-dobra4">
+    <div class="dobra4-topo">
+      <div class="dobra4-foto">
+        <img src="assets/d4main.jpg" alt="Mulher de costas, sentada no sofá com almofadas verdes, segurando uma xícara e olhando pela janela" width="776" height="632" loading="lazy" decoding="async">
+      </div>
+      <img class="dobra4-ramo" src="assets/ramo.png" alt="" width="280" height="326" aria-hidden="true" loading="lazy">
+      <div class="dobra4-texto">
+        <p class="olho">A transformação é possível</p>
+        <h2 id="titulo-dobra4">Você não precisa mudar<br class="qb"> toda a sua vida de uma vez. <em>Pode começar pelo lugar<br class="qb"> onde ela acontece.</em></h2>
+        <div class="dobra4-corpo">
+          <p>Sua casa não precisa ser perfeita, e sua rotina não precisa estar completamente organizada para você começar a viver de outra maneira.</p>
+          <p>Pequenas mudanças na forma como você organiza os ambientes, constrói seus hábitos e cuida de si podem abrir espaço para uma vida com mais intenção, equilíbrio e conexão com aquilo que realmente importa.</p>
+          <p class="destaque4">O objetivo não é fazer mais. <em>É criar condições para viver melhor.</em></p>
+        </div>
+      </div>
+    </div>
+    <div class="caminhos">
+      <svg class="caminhos-linha" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 22 C 120 6, 240 30, 360 20 C 480 10, 600 34, 720 22 C 840 10, 960 32, 1080 20 C 1200 8, 1320 30, 1440 18" fill="none" stroke="#D6CEC1" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>
+      <ol>
+        <li class="caminho">
+          <div class="caminho-foto">
+            <img src="assets/d4c1.jpg" alt="Sala acolhedora com sofá claro, almofadas, mesa de centro de madeira e vaso com folhagens" width="402" height="202" loading="lazy" decoding="async">
+            <span class="caminho-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="#7A6450" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15 L16 5 L27 15"/><path d="M8 13 V27 H24 V13"/><path d="M13 27 V20 H19 V27"/></svg></span>
+          </div>
+          <div class="caminho-texto">
+            <span class="caminho-num">01</span>
+            <div>
+              <h3>Um lar que acolhe você</h3>
+              <p>Transformar os ambientes para que eles atendam às suas necessidades e favoreçam a vida que você deseja viver.</p>
+            </div>
+          </div>
+        </li>
+        <li class="caminho">
+          <div class="caminho-foto">
+            <img src="assets/d4c2.jpg" alt="Mesa de madeira com caderno aberto, caneta, vaso com planta e xícara sob luz natural" width="402" height="202" loading="lazy" decoding="async">
+            <span class="caminho-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="#7A6450" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="11.5"/><path d="M16 9 V16 L21 19"/></svg></span>
+          </div>
+          <div class="caminho-texto">
+            <span class="caminho-num">02</span>
+            <div>
+              <h3>Uma rotina que faz sentido</h3>
+              <p>Construir hábitos e organizar o cotidiano de maneira mais consciente, respeitando sua realidade e suas prioridades.</p>
+            </div>
+          </div>
+        </li>
+        <li class="caminho">
+          <div class="caminho-foto">
+            <img src="assets/d4c3.jpg" alt="Canto tranquilo junto à janela com livros, vaso de folhagens e vela acesa" width="402" height="202" loading="lazy" decoding="async">
+            <span class="caminho-ic" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="#7A6450" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M11 28 C 13 22, 15 17, 17 12 C 18 9, 19 7, 21 5"/><path d="M14.5 19 C 10.5 19, 7.5 16, 6.5 12 C 10.5 12, 13.5 15, 14.5 19 Z"/><path d="M16.5 14 C 20 13.5, 23 10.5, 24 7 C 20.5 7.5, 17.5 10.5, 16.5 14 Z"/><path d="M13 24 C 16.5 24, 19.5 22, 21 18.5 C 17.5 18.5, 14.5 20.5, 13 24 Z"/></svg></span>
+          </div>
+          <div class="caminho-texto">
+            <span class="caminho-num">03</span>
+            <div>
+              <h3>Uma vida com mais intenção</h3>
+              <p>Criar espaço para o autocuidado, as relações e as experiências que dão significado aos seus dias.</p>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </div>
   </section>
 </main>
 
