@@ -243,16 +243,3 @@
   .barra-inner { justify-content: flex-end; gap: clamp(24px, 2.6vw, 40px); }
   .barra-menu .redes { position: static; transform: none; padding-left: clamp(20px, 2.2vw, 32px); border-left: 1px solid rgba(63, 65, 48, .3); }
 }
-
-/* Lado direito da faixa verde: três "janelas" em arco com fotos do site, de alturas diferentes, subindo da base */
-.topo-inner { position: relative; overflow: hidden; }
-.topo-janelas { position: absolute; right: max(24px, 5vw); top: 0; bottom: 0; display: flex; align-items: flex-end; gap: clamp(8px, 1vw, 14px); pointer-events: none; }
-.topo-janelas img { width: clamp(64px, 7vw, 104px); object-fit: cover; border-radius: 999px 999px 0 0; border: 1px solid rgba(242, 239, 234, .45); border-bottom: 0; }
-.topo-janelas img:nth-child(1) { height: 72%; }
-.topo-janelas img:nth-child(2) { height: 88%; }
-.topo-janelas img:nth-child(3) { height: 60%; }
-@media (max-width: 560px) {
-  .topo-janelas { right: 12px; gap: 8px; }
-  .topo-janelas img { width: 46px; }
-  .topo-janelas img:nth-child(3) { display: none; }
-}
