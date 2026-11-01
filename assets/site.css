@@ -244,17 +244,15 @@
   .barra-menu .redes { position: static; transform: none; padding-left: clamp(20px, 2.2vw, 32px); border-left: 1px solid rgba(63, 65, 48, .3); }
 }
 
-/* Folhagem decorativa: ramos originais da marca, em tom claro, em pé na base da faixa verde (lado direito), formando um pequeno buquê vertical */
+/* Lado direito da faixa verde: três "janelas" em arco com fotos do site, de alturas diferentes, subindo da base */
 .topo-inner { position: relative; overflow: hidden; }
-.topo-folhas { position: absolute; top: 0; bottom: 0; right: max(24px, 5vw); width: clamp(240px, 24vw, 360px); pointer-events: none; }
-.topo-folhas img { position: absolute; bottom: -4%; height: auto; transform-origin: 12% 100%; }
-.topo-folhas .folha-1 { width: 66%; left: 34%; transform: rotate(-31deg); }
-.topo-folhas .folha-2 { width: 50%; left: 30%; transform: rotate(-4deg) scaleX(-1); transform-origin: 88% 100%; opacity: .7; }
-.topo-folhas .folha-3 { width: 46%; left: 58%; transform: rotate(-58deg); opacity: .55; }
-@media (max-width: 900px) {
-  .topo-folhas { width: clamp(170px, 32vw, 240px); right: 12px; }
-}
+.topo-janelas { position: absolute; right: max(24px, 5vw); top: 0; bottom: 0; display: flex; align-items: flex-end; gap: clamp(8px, 1vw, 14px); pointer-events: none; }
+.topo-janelas img { width: clamp(64px, 7vw, 104px); object-fit: cover; border-radius: 999px 999px 0 0; border: 1px solid rgba(242, 239, 234, .45); border-bottom: 0; }
+.topo-janelas img:nth-child(1) { height: 72%; }
+.topo-janelas img:nth-child(2) { height: 88%; }
+.topo-janelas img:nth-child(3) { height: 60%; }
 @media (max-width: 560px) {
-  .topo-folhas { width: 130px; right: 4px; }
-  .topo-folhas .folha-3 { display: none; }
+  .topo-janelas { right: 12px; gap: 8px; }
+  .topo-janelas img { width: 46px; }
+  .topo-janelas img:nth-child(3) { display: none; }
 }
