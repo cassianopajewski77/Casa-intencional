@@ -244,3 +244,6 @@
   .barra-inner { justify-content: flex-end; gap: clamp(24px, 2.6vw, 40px); }
   .barra-menu .redes { position: static; transform: none; padding-left: clamp(20px, 2.2vw, 32px); border-left: 1px solid rgba(63, 65, 48, .3); }
 }
+
+/* Menu congelado ao rolar: o cabeçalho gruda no topo deslocado pela altura da faixa oliva (--faixa, medida no script do rodapé), então só a faixa clara do menu fica visível */
+.topo { position: sticky !important; top: calc(-1 * var(--faixa, 0px)); z-index: 40; }
