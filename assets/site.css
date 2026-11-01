@@ -206,10 +206,34 @@
   .rodape-col { justify-items: start; }
 }
 
-/* Computador: menu na base da faixa verde, centralizado entre a logo e a lateral direita; redes no canto superior direito */
-@media (min-width: 901px) {
-  .topo-inner { align-items: stretch; }
-  .topo-dir { flex: 1; display: grid; grid-template-columns: 1fr; grid-template-rows: auto 1fr; gap: 0; }
-  .topo .redes { grid-row: 1; justify-self: end; padding-left: 0; border-left: 0; }
-  .topo .menu { grid-row: 2; align-self: end; justify-self: center; margin-bottom: -6px; }
+
+/* Faixa clara abaixo do verde-oliva: menu centralizado e ícones (redes + e-mail) à direita */
+.topo-inner { justify-content: flex-start !important; }
+.barra-menu { position: relative; background: var(--verde-suave); }
+.barra-inner { position: relative; max-width: 1360px; margin: 0 auto; min-height: 58px; display: flex; align-items: center; justify-content: center;
+  padding-left: max(24px, 5vw, env(safe-area-inset-left, 0px)); padding-right: max(24px, 5vw, env(safe-area-inset-right, 0px)); }
+.barra-menu .menu a { color: #3F4130; font-weight: 500; }
+.barra-menu .menu a:focus-visible { outline-color: #3F4130; }
+.barra-menu .menu-btn { color: #3F4130; }
+.barra-menu .menu-btn:focus-visible { outline-color: #3F4130; }
+.barra-menu .redes { position: absolute; right: max(24px, 5vw, env(safe-area-inset-right, 0px)); top: 50%; transform: translateY(-50%); padding-left: 0; border-left: 0; }
+.barra-menu .redes a { color: #3F4130; border-color: rgba(63, 65, 48, .35); width: 34px; height: 34px; }
+.barra-menu .redes a:hover { background: var(--verde-oliva); color: var(--off-white); border-color: var(--verde-oliva); }
+.barra-menu .redes a:focus-visible { outline-color: #3F4130; }
+.barra-menu .redes svg { width: 16px; height: 16px; }
+@media (max-width: 1100px) and (min-width: 901px) {
+  .barra-inner { justify-content: space-between; }
+  .barra-menu .redes { position: static; transform: none; }
+}
+@media (max-width: 900px) {
+  .barra-inner { justify-content: space-between; min-height: 52px; }
+  .barra-menu .redes { position: static; transform: none; }
+  .barra-menu .menu ul { background: var(--verde-suave); border-top: 1px solid rgba(63, 65, 48, .18); }
+  .barra-menu .menu li + li { border-top-color: rgba(63, 65, 48, .14); }
+  .barra-menu .menu a[aria-current="page"] { color: var(--verde-oliva); text-decoration: underline; text-underline-offset: 6px; }
+}
+@media (max-width: 560px) {
+  .barra-menu .redes { gap: 4px; }
+  .barra-menu .redes a { width: 30px; height: 30px; }
+  .barra-menu .redes svg { width: 14px; height: 14px; }
 }
