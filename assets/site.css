@@ -208,7 +208,8 @@
 
 
 /* Faixa clara abaixo do verde-oliva: menu centralizado e ícones (redes + e-mail) à direita */
-.topo-inner { justify-content: flex-start !important; }
+.topo-inner { justify-content: center !important; }
+.logo-topo { margin-left: 0 !important; }
 .barra-menu { position: relative; background: var(--verde-suave); }
 .barra-inner { position: relative; max-width: 1360px; margin: 0 auto; min-height: 58px; display: flex; align-items: center; justify-content: center;
   padding-left: max(24px, 5vw, env(safe-area-inset-left, 0px)); padding-right: max(24px, 5vw, env(safe-area-inset-right, 0px)); }
