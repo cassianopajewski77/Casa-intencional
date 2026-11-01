@@ -243,3 +243,17 @@
   .barra-inner { justify-content: flex-end; gap: clamp(24px, 2.6vw, 40px); }
   .barra-menu .redes { position: static; transform: none; padding-left: clamp(20px, 2.2vw, 32px); border-left: 1px solid rgba(63, 65, 48, .3); }
 }
+
+/* Folhagem decorativa (ramo original da marca em tom claro) no lado direito da faixa verde */
+.topo-inner { position: relative; overflow: hidden; }
+.topo-folhas { position: absolute; top: 0; bottom: 0; right: max(24px, 5vw); width: clamp(220px, 26vw, 380px); pointer-events: none; }
+.topo-folhas img { position: absolute; height: auto; }
+.topo-folhas .folha-1 { width: 58%; right: 4%; top: -22%; transform: rotate(-118deg); }
+.topo-folhas .folha-2 { width: 46%; right: 44%; bottom: -34%; transform: rotate(-58deg) scaleX(-1); opacity: .8; }
+@media (max-width: 900px) {
+  .topo-folhas { width: clamp(150px, 38vw, 240px); right: 8px; }
+}
+@media (max-width: 560px) {
+  .topo-folhas .folha-2 { display: none; }
+  .topo-folhas { width: 150px; }
+}
