@@ -237,3 +237,9 @@
   .barra-menu .redes a { width: 30px; height: 30px; }
   .barra-menu .redes svg { width: 14px; height: 14px; }
 }
+
+/* Menu alinhado à direita, junto dos ícones */
+@media (min-width: 901px) {
+  .barra-inner { justify-content: flex-end; gap: clamp(24px, 2.6vw, 40px); }
+  .barra-menu .redes { position: static; transform: none; padding-left: clamp(20px, 2.2vw, 32px); border-left: 1px solid rgba(63, 65, 48, .3); }
+}
