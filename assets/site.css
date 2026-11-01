@@ -244,16 +244,17 @@
   .barra-menu .redes { position: static; transform: none; padding-left: clamp(20px, 2.2vw, 32px); border-left: 1px solid rgba(63, 65, 48, .3); }
 }
 
-/* Folhagem decorativa (ramo original da marca em tom claro) no lado direito da faixa verde */
+/* Folhagem decorativa: ramos originais da marca, em tom claro, em pé na base da faixa verde (lado direito), formando um pequeno buquê vertical */
 .topo-inner { position: relative; overflow: hidden; }
-.topo-folhas { position: absolute; top: 0; bottom: 0; right: max(24px, 5vw); width: clamp(220px, 26vw, 380px); pointer-events: none; }
-.topo-folhas img { position: absolute; height: auto; }
-.topo-folhas .folha-1 { width: 58%; right: 4%; top: -22%; transform: rotate(-118deg); }
-.topo-folhas .folha-2 { width: 46%; right: 44%; bottom: -34%; transform: rotate(-58deg) scaleX(-1); opacity: .8; }
+.topo-folhas { position: absolute; top: 0; bottom: 0; right: max(24px, 5vw); width: clamp(240px, 24vw, 360px); pointer-events: none; }
+.topo-folhas img { position: absolute; bottom: -4%; height: auto; transform-origin: 12% 100%; }
+.topo-folhas .folha-1 { width: 66%; left: 34%; transform: rotate(-31deg); }
+.topo-folhas .folha-2 { width: 50%; left: 30%; transform: rotate(-4deg) scaleX(-1); transform-origin: 88% 100%; opacity: .7; }
+.topo-folhas .folha-3 { width: 46%; left: 58%; transform: rotate(-58deg); opacity: .55; }
 @media (max-width: 900px) {
-  .topo-folhas { width: clamp(150px, 38vw, 240px); right: 8px; }
+  .topo-folhas { width: clamp(170px, 32vw, 240px); right: 12px; }
 }
 @media (max-width: 560px) {
-  .topo-folhas .folha-2 { display: none; }
-  .topo-folhas { width: 150px; }
+  .topo-folhas { width: 130px; right: 4px; }
+  .topo-folhas .folha-3 { display: none; }
 }
