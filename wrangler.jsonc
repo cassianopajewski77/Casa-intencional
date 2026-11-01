@@ -1,8 +1,0 @@
-// Configuração do Cloudflare Worker: site estático servido direto da raiz do repositório.
-{
-  "name": "casa-intencional",
-  "compatibility_date": "2026-10-01",
-  "assets": {
-    "directory": "./"
-  }
-}
