@@ -205,3 +205,11 @@
   .rodape-inner { flex-direction: column; align-items: flex-start; }
   .rodape-col { justify-items: start; }
 }
+
+/* Computador: menu na base da faixa verde, centralizado entre a logo e a lateral direita; redes no canto superior direito */
+@media (min-width: 901px) {
+  .topo-inner { align-items: stretch; }
+  .topo-dir { flex: 1; display: grid; grid-template-columns: 1fr; grid-template-rows: auto 1fr; gap: 0; }
+  .topo .redes { grid-row: 1; justify-self: end; padding-left: 0; border-left: 0; }
+  .topo .menu { grid-row: 2; align-self: end; justify-self: center; margin-bottom: -6px; }
+}
